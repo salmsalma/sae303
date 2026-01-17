@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Carte avec Leaflet</title>
 
+
+     <!-- feuille de style Leaflet pour bien afficher la carte-->
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+     
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="loading">Chargement des cinémas...</div>
+
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="Rechercher une ville ou un cinéma...">
+        <button id="search-btn">Rechercher</button>
+    </div>
+
+    <div id="results-info"></div>
+    <div id="map"></div>
+    
+    <div class="filter-bar">
+        <button id="btn-entrees" class="active">Top 10 Entrées</button>
+        <button id="btn-capacite">Top 10 Capacité</button>
+    </div>
+
+    <div id="chart-entrees" class="chart-container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <div id="chart-capacite" class="chart-container" style="display: none;">
+        <canvas id="myChart2"></canvas>
+    </div>
+
+     
+     <!-- Bibliothèque JS Leaflet-->
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""> </script>
+     
+     <!-- Bibliothèque Chart.js -->
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+     
+
+     <script>
+          //L.map('map') : crée une carte dans la div id="map"
+          //setView([latitude, longitude], zoom) : centre la carte et définit le niveau de zoom
+         //var map = L.map('map').setView([48.8499198, 2.6370411], 10);
+
+          var map = L.map('map').setView([48.8499198, 2.6370411], 9);
+
+
+          //tilelayer= images sur la carte comme les rouets, villes etc
+          // {z} = niveau de zoom, {x} {y} = coordonnées des tuiles
+          L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               
+               maxZoom: 19, //zoom maximum autorisé
+               attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+     
+          }).addTo(map);
+          
+          //var marker = L.marker([51.5, -0.09]).addTo(map); //Ajout d'un marqueur à une position donnée 
+
+          //marker.bindPopup("<b>Hello world!</b><br>I am a popup.");//Ajout d'un popup avec un texte quand on clique sur le marqueur
+          
+
+          //var popup = L.popup();
+
+          //fonction appelée qd on clique sur la carte (les coordonnées de l'endroit où on a cliqué s'affichent)
+          //function onMapClick(e) {
+
+               // e.latlng = coordonnées du clic
+               //popup
+                   // .setLatLng(e.latlng)
+                 //  .setContent("You clicked the map at " + e.latlng.toString())
+                   // .openOn(map);
+         // }
+
+          //map.on('click', onMapClick);
+
+     </script>
+
+     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+     <script src="cinemas.js"></script>
+
+
+     
+</body>
+</html>

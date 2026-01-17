@@ -1,0 +1,95 @@
+#map { height: 600px; /*FAIRE ATTENTION car sans "height", la carte ne s'affiche pas */
+    width: 60%;
+    margin: 0 auto;
+     }
+
+#loading {
+         position: absolute;
+         top: 10px;
+         left: 50%;
+         transform: translateX(-50%);
+         background: white;
+         padding: 8px 15px;
+         border-radius: 5px;
+         z-index: 1000; /* pour être au-dessus de Leaflet */
+         display: none; /* caché par défaut */
+         box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+ #search-container {
+     width: 60%;
+     margin: 20px auto;
+     display: flex;
+     gap: 5px;
+     justify-content: center;
+ }
+
+ #search-input {
+     padding: 10px;
+     border-radius: 5px;
+     border: 1px solid #ccc;
+     width: 250px;
+     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+ }
+
+ #search-btn {
+     padding: 10px 15px;
+     border-radius: 5px;
+     border: none;
+     background-color: #007bff;
+     color: white;
+     cursor: pointer;
+     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+     font-weight: bold;
+ }
+
+ #search-btn:hover {
+     background-color: #0056b3;
+ }
+
+ #results-info {
+     width: 60%;
+     margin: 20px auto;
+     font-family: Arial, sans-serif;
+     max-height: 300px; /* Limite la hauteur pour garder la carte visible */
+     overflow-y: auto;  /* Ajoute une barre de défilement si nécessaire */
+ }
+ 
+ .cinema-item {
+     border: 1px solid #ddd;
+     padding: 15px;
+     margin-bottom: 10px;
+     border-radius: 5px;
+     background-color: #f9f9f9;
+ }
+
+ .chart-container {
+     width: 50%;
+     max-width: 600px; /* Empêche le graphique de devenir trop large */
+     margin: 40px auto;
+     background: white;
+     padding: 20px;
+     border-radius: 8px;
+     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+ }
+
+ .filter-bar {
+     text-align: center;
+     margin: 20px auto;
+ }
+
+ .filter-bar button {
+     padding: 10px 20px;
+     margin: 0 10px;
+     border: 1px solid #007bff;
+     background-color: white;
+     color: #007bff;
+     border-radius: 5px;
+     cursor: pointer;
+     font-weight: bold;
+ }
+
+ .filter-bar button.active, .filter-bar button:hover {
+     background-color: #007bff;
+     color: white;
+ }
