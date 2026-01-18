@@ -5,5 +5,5 @@
 <h1 align="center">SAE 303</h1>
 
 <p align="center">
-hfghjjhugyf (décrire proj)
+Votre guide pour trouver les meilleurs cinémas en Île-de-France.
 </p> 
